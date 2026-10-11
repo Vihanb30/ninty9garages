@@ -61,7 +61,7 @@ window.SERVICES = [
     slug: "detailing", num: "04", title: "Detailing & Paint Correction",
     tagline: "A complete refresh, inside and out, at our Turtle Wax Car Care Studio.",
     img: "assets/gallery/paint-correction.jpg",
-    imgs: ["assets/gallery/paint-correction.jpg", "assets/gallery/interior-detailing.jpg"],
+    imgs: ["assets/gallery/paint-correction.jpg", "assets/services/dry-cleaning.jpg", "assets/gallery/interior-detailing.jpg"],
     intro: [
       "Car detailing is a complete refresh with exterior cleaning, interior care, paint enhancement and finishing. The work is planned around your vehicle's condition."
     ],
@@ -126,7 +126,7 @@ window.SERVICES = [
   {
     slug: "underbody-coating", num: "08", title: "Underbody Coating",
     tagline: "Protection for the part of your car you never see.",
-    img: "assets/services/underbody.jpg",
+    img: "assets/services/underbody.jpg", pos: "center 40%",
     intro: [
       "Underbody coating protects the underside of your vehicle from moisture, corrosion, road grime and other environmental conditions."
     ],
