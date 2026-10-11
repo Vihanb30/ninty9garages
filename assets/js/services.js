@@ -11,11 +11,11 @@ window.SERVICES = [
       "We're a Bimbra 4×4 Studio, so the hardware is genuine and fitted to the vehicle's mounting points by our own team."
     ],
     included: [
-      ["Front bumpers", "Bimbra Model X, O, R, W and MR, and Proman Mark-1 for the Thar"],
-      ["Front grills", "S1, S2, S3, AB, Wrangler-style and GR Sport grills"],
-      ["Side steps & rock sliders", "For Thar, Scorpio N, Fortuner and Hilux"],
-      ["Snorkels, light mounts & brackets", "Bumper, windshield and fog-lamp mounts"],
-      ["Utility upgrades", "Hilux roller shutter tonneau covers, seat recliner kits and more"]
+      ["Front bumpers", "Bimbra Model X, O, R, W and MR, and Proman Mark-1 for the Thar", "shop.html?cat=Bumpers%20%26%20Grills&q=bumper"],
+      ["Front grills", "S1, S2, S3, AB, Wrangler-style and GR Sport grills", "shop.html?cat=Bumpers%20%26%20Grills&q=grill"],
+      ["Side steps & rock sliders", "For Thar, Scorpio N, Fortuner and Hilux", "shop.html?cat=Side%20Steps%20%26%20Sills"],
+      ["Snorkels, light mounts & brackets", "Bumper, windshield and fog-lamp mounts", "shop.html?cat=4%C3%974%20Mods%20%26%20Fitments"],
+      ["Utility upgrades", "Hilux roller shutter tonneau covers, seat recliner kits and more", "shop.html?q=hilux"]
     ],
     options: [{ h: "Popular vehicles", tags: ["Mahindra Thar", "Thar Roxx", "Scorpio N", "Toyota Hilux", "Fortuner"] }],
     notes: ["Every build starts with a consultation. Tell us your vehicle and how you use it, and we'll suggest the right parts."],
@@ -50,11 +50,11 @@ window.SERVICES = [
     ],
     included: [
       ["Graphene coating", "Advanced paint protection, enhanced gloss and hydrophobic protection for easier maintenance"],
-      ["Ceramic coating", "Turtle Wax Ceramic Hydro+: enhanced gloss with hydrophobic and environmental protection"]
+      ["Ceramic coating", "Turtle Wax Ceramic Hydro+: enhanced gloss with hydrophobic and environmental protection", "shop.html?q=ceramic"]
     ],
     options: [{ h: "Benefits", tags: ["High gloss", "Hydrophobic", "Easier washing", "Environmental protection"] }],
     notes: ["Coatings work best on well-prepared paint, so we may recommend paint correction first."],
-    shop: { href: "shop.html?cat=Car%20Care", label: "Shop Turtle Wax car care", sub: "Spray coatings, waxes and cleaners" },
+    shop: { href: "shop.html?cat=Car%20Care%20%26%20Essentials", label: "Shop Turtle Wax car care", sub: "Spray coatings, waxes and cleaners" },
     form: "Graphene/Ceramic Coating"
   },
   {
@@ -71,7 +71,7 @@ window.SERVICES = [
       ["Car dry cleaning", "Waterless interior cleaning for seats, carpets, mats, dashboard and interior panels"]
     ],
     notes: ["We'll look at the car first and recommend only what it needs."],
-    shop: { href: "shop.html?cat=Car%20Care", label: "Shop car care products", sub: "Turtle Wax waxes, cleaners and accessories" },
+    shop: { href: "shop.html?cat=Car%20Care%20%26%20Essentials", label: "Shop car care products", sub: "Turtle Wax waxes, cleaners and accessories" },
     form: "Detailing"
   },
   {
@@ -82,10 +82,10 @@ window.SERVICES = [
       "Brighter, safer night driving with genuine Aozoom lighting, fitted properly at our studio. As an authorised retailer and installation studio, we supply and install the full range."
     ],
     included: [
-      ["LED headlight bulbs", "Including the app-controlled AZ1666 and the 150W AZ-1505"],
-      ["Bi-LED fog projectors", "FLP 2040, FLP 2090 and FLP 4090 laser modules"],
-      ["Auxiliary lights", "W5, W7 and W8 multi-lens dual-beam lights"],
-      ["Ambient & accent lighting", "Cardi ambient lighting and illuminated AC vents, Proman LED side markers, Thar full-LED tail lights"]
+      ["LED headlight bulbs", "Including the app-controlled AZ1666 and the 150W AZ-1505", "shop.html?cat=Lighting&q=headlight"],
+      ["Bi-LED fog projectors", "FLP 2040, FLP 2090 and FLP 4090 laser modules", "shop.html?cat=Lighting&q=fog"],
+      ["Auxiliary lights", "W5, W7 and W8 multi-lens dual-beam lights", "shop.html?cat=Lighting&q=auxiliary"],
+      ["Ambient & accent lighting", "Cardi ambient lighting and illuminated AC vents, Proman LED side markers, Thar full-LED tail lights", "shop.html?cat=Lighting"]
     ],
     notes: ["Tell us your vehicle and bulb type. We'll confirm compatibility before fitting."],
     shop: { href: "shop.html?cat=Lighting", label: "See lighting & prices", sub: "13 lighting products in the shop" },
@@ -99,10 +99,10 @@ window.SERVICES = [
       "Professional installation of interior accessories, exterior styling products, lighting upgrades, floor mats, seat covers and other vehicle-specific accessories."
     ],
     included: [
-      ["GFX floor & trunk mats", "Custom-fit TPV mats for Thar, Scorpio N, Creta, Nexon, Harrier, Swift and many more"],
-      ["Seat covers", "Custom-fit leatherette seat covers for Thar and Scorpio N"],
-      ["Exterior accessories", "Door edge guards, bumper corner protectors, side vents, number plate frames and car covers"],
-      ["Comfort extras", "Window curtains, mud flaps, sill guards and car fragrances"]
+      ["GFX floor & trunk mats", "Custom-fit TPV mats for Thar, Scorpio N, Creta, Nexon, Harrier, Swift and many more", "shop.html?cat=Floor%20%26%20Trunk%20Mats"],
+      ["Seat covers", "Custom-fit leatherette seat covers for Thar and Scorpio N", "shop.html?q=seat%20cover"],
+      ["Exterior accessories", "Door edge guards, bumper corner protectors, side vents, mud flaps, number plate frames and car covers", "shop.html?cat=Exterior%20Accessories"],
+      ["Comfort extras", "Window curtains and car fragrances", "shop.html?cat=Seat%20Covers%20%26%20Interior"]
     ],
     notes: ["Bought something elsewhere? We can fit vehicle-specific accessories too. Just ask."],
     shop: { href: "shop.html?cat=Floor%20%26%20Trunk%20Mats", label: "Browse accessories & prices", sub: "Mats, seat covers and exterior add-ons" },

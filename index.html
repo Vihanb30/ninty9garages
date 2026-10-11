@@ -225,11 +225,11 @@
     </div>
 
     <div class="gallery" id="gallery">
-      <figure class="tile wide tall reveal " data-c="4x4" style="--g:linear-gradient(160deg,#1d1d21,#0c0c0e)">
+      <figure class="tile wide tall reveal " data-c="4x4" data-product="2784" style="--g:linear-gradient(160deg,#1d1d21,#0c0c0e)">
         <div class="ph"></div><img src="assets/gallery/thar-bumper.jpg" alt="Black Mahindra Thar with off-road front bumper and auxiliary lights" loading="lazy">
         <figcaption class="cap"><div><span>4×4 Fitment</span><strong>Thar · Bimbra Model-O Bumper</strong></div><i>↗</i></figcaption>
       </figure>
-      <figure class="tile tall reveal d1" data-c="4x4" style="--g:linear-gradient(160deg,#1d1d21,#0c0c0e)">
+      <figure class="tile tall reveal d1" data-c="4x4" data-product="2364" style="--g:linear-gradient(160deg,#1d1d21,#0c0c0e)">
         <div class="ph"></div><img style="object-position:12% center" src="assets/gallery/thar-snorkel.jpg" alt="Thar fitted with a raised-air snorkel" loading="lazy">
         <figcaption class="cap"><div><span>4×4 Fitment</span><strong>Thar Snorkel</strong></div><i>↗</i></figcaption>
       </figure>
@@ -254,6 +254,28 @@
   </div>
 </section>
 
+<!-- ================= SHOP PICKS ================= -->
+<section class="section" id="picks-section">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow reveal">From the shop</span>
+        <h2 class="reveal d1">Popular <span class="accent">picks.</span></h2>
+      </div>
+      <p class="reveal d2">109 genuine parts and accessories with prices, from Bimbra bumpers to Turtle Wax care. Tap any product for photos, details and ordering.</p>
+    </div>
+    <div class="filters reveal" id="pickTabs" role="tablist" aria-label="Product lists">
+      <button class="on" data-list="best" role="tab" aria-selected="true">Best sellers</button>
+      <button data-list="new" role="tab" aria-selected="false">New arrivals</button>
+      <button data-list="featured" role="tab" aria-selected="false">Featured</button>
+      <button data-list="weekly" role="tab" aria-selected="false">Car care picks</button>
+      <button data-list="top" role="tab" aria-selected="false">Top rated</button>
+    </div>
+    <div class="picks" id="picks" role="tabpanel"></div>
+    <div class="picks-foot reveal"><a class="btn btn-primary" href="shop.html">Browse all 109 products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</section>
+
 <!-- ================= PARTNERS ================= -->
 <section class="section carbon" id="partners">
   <div class="wrap">
@@ -272,6 +294,9 @@
       <div class="partner"><div class="plogo"><img class="inv" src="assets/logos/gfx.jpg" alt="GFX logo" loading="lazy"></div><em>Accessories</em><strong>GFX</strong><span>Door edge guards &amp; trim</span></div>
       <div class="partner"><div class="plogo"><img src="assets/logos/proman.png" alt="Proman logo" loading="lazy"></div><em>Accessories</em><strong>Proman</strong><span>Off-road &amp; utility gear</span></div>
     </div>
+    <p class="also reveal">Also in our shop:
+      <a href="shop.html?q=hella">Hella</a><a href="shop.html?q=cardi">Cardi</a><a href="shop.html?q=galio">Galio</a><a href="shop.html?q=kmh">KMH</a><a href="shop.html?q=involve">Involve</a><a href="shop.html?q=vogue">Vogue</a>
+    </p>
   </div>
 </section>
 
@@ -361,6 +386,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
 <script src="assets/js/services.js"></script>
+<script src="assets/js/home-products.js"></script>
 <script>
 /* ============ CONFIG ============ */
 const CONFIG = {
@@ -411,8 +437,9 @@ tiles.forEach(t => {
   const fail = () => img.remove();           // missing photo → keep styled placeholder
   if (img.complete && !img.naturalWidth) fail(); else img.addEventListener("error", fail);
 });
-document.querySelectorAll(".filters button").forEach(b => b.addEventListener("click", () => {
-  document.querySelectorAll(".filters button").forEach(x => x.classList.toggle("on", x === b));
+const galleryFilters = document.querySelectorAll("#work .filters button");
+galleryFilters.forEach(b => b.addEventListener("click", () => {
+  galleryFilters.forEach(x => x.classList.toggle("on", x === b));
   const f = b.dataset.f;
   tiles.forEach(t => t.classList.toggle("hide", f !== "all" && t.dataset.c !== f));
 }));
@@ -426,7 +453,8 @@ function openLb(i){
   if (img) { const c = img.cloneNode(); c.loading = "eager"; lbFrame.append(c); }
   else { const d = document.createElement("div"); d.style.background = getComputedStyle(t).getPropertyValue("--g"); lbFrame.append(d); }
   const cap = document.createElement("div"); cap.className = "lb-cap";
-  cap.innerHTML = `<span>${t.querySelector(".cap span").textContent}</span><strong>${t.querySelector(".cap strong").textContent}</strong>`;
+  cap.innerHTML = `<span>${t.querySelector(".cap span").textContent}</span><strong>${t.querySelector(".cap strong").textContent}</strong>` +
+    (t.dataset.product ? `<a class="lb-shop" href="shop.html#product-${t.dataset.product}">View product &amp; price in shop →</a>` : "");
   lbFrame.append(cap);
   lb.classList.add("on"); document.body.style.overflow = "hidden";
 }
@@ -509,7 +537,7 @@ function renderService(x){
         ${x.intro.map(t => `<p>${escH(t)}</p>`).join("")}
         ${imgs.length > 1 ? `<div class="sheet-thumbs">${imgs.map((src,i) => `<button data-img="${escH(src)}" class="${i ? "" : "on"}" aria-label="Show photo ${i+1}"><img src="${escH(src)}" alt=""></button>`).join("")}</div>` : ""}
         <h3>What's included</h3>
-        <ul class="ticks">${x.included.map(([t,sub]) => `<li>${escH(t)}${sub ? `<span>${escH(sub)}</span>` : ""}</li>`).join("")}</ul>
+        <ul class="ticks">${x.included.map(([t,sub,href]) => `<li>${escH(t)}${sub ? `<span>${escH(sub)}</span>` : ""}${href ? `<a class="inc-link" href="${escH(href)}">See prices in shop →</a>` : ""}</li>`).join("")}</ul>
         ${(x.options || []).map(o => `<h3>${escH(o.h)}</h3><div class="tags">${o.tags.map(t => `<span>${escH(t)}</span>`).join("")}</div>`).join("")}
         ${(x.notes || []).length ? `<h3>Good to know</h3>${x.notes.map(n => `<div class="note"><b>i</b><span>${escH(n)}</span></div>`).join("")}` : ""}
       </div>
@@ -576,6 +604,33 @@ document.querySelectorAll(".svc-media img").forEach(img => {
   const fail = () => { img.parentNode.classList.add("fallback"); img.remove(); };
   if (img.complete && !img.naturalWidth) fail(); else img.addEventListener("error", fail);
 });
+
+
+/* ============ SHOP PICKS (home page product lists) ============ */
+(() => {
+  const L = window.HOME_LISTS, P = window.HOME_PRODUCTS, wrap = document.getElementById("picks");
+  if (!L || !P || !wrap) return;
+  const inr = n => "₹" + n.toLocaleString("en-IN");
+  const card = p => {
+    const off = p.was ? Math.round((1 - p.price / p.was) * 100) : 0;
+    const ini = (p.brand || p.cat).replace(/[^A-Za-z0-9 ]/g, "").split(" ").filter(Boolean).map(w => w[0]).join("").slice(0, 3);
+    return `<a class="pick" href="shop.html#product-${p.id}">
+      <span class="pick-img"><span class="pick-ph">${escH(ini)}</span>${p.img ? `<img src="assets/products/${escH(p.img)}" alt="${escH(p.name)}" loading="lazy" onerror="this.remove()">` : ""}
+        ${off >= 3 ? `<b class="pick-off">-${off}%</b>` : ""}</span>
+      <span class="pick-body">
+        <small>${p.brand ? `<em>${escH(p.brand)}</em> · ` : ""}${escH(p.cat)}</small>
+        <strong>${escH(p.name)}</strong>
+        ${p.rating ? `<span class="pick-rate"><i>★★★★★</i> ${p.rating.toFixed(1)} (${p.reviews} review${p.reviews > 1 ? "s" : ""})</span>` : ""}
+        <span class="pick-price">${p.max ? "<small>From</small> " : ""}${inr(p.price)}${p.was ? ` <s>${inr(p.was)}</s>` : ""}</span>
+      </span></a>`;
+  };
+  const show = key => {
+    wrap.innerHTML = (L[key] || []).map(id => P[id]).filter(Boolean).map(card).join("");
+    document.querySelectorAll("#pickTabs button").forEach(b => { const on = b.dataset.list === key; b.classList.toggle("on", on); b.setAttribute("aria-selected", on); });
+  };
+  document.getElementById("pickTabs").addEventListener("click", e => { const b = e.target.closest("button"); if (b) show(b.dataset.list); });
+  show("best");
+})();
 
 /* ============ HERO: 3D TOPOGRAPHIC TRAIL ============ */
 addEventListener("load", () => {
