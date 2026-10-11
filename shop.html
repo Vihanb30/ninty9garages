@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shop | Ninty9 Garages Gwalior</title>
+<meta name="description" content="Shop genuine Aozoom lighting, Bimbra 4×4 bumpers and grills, GFX floor and trunk mats, seat covers and Turtle Wax car care at Ninty9 Garages, Gwalior. Fitment available.">
+<meta name="theme-color" content="#0a0a0b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0a0b'/%3E%3Ctext x='32' y='43' font-family='Arial Black,Arial' font-weight='900' font-size='30' text-anchor='middle' fill='%232ee87a'%3E99%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+/* ---------- SHOP PAGE ---------- */
+.shop-hero{padding:150px 0 40px;position:relative;overflow:hidden}
+.shop-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse 60% 80% at 85% 0%,rgba(46,232,122,.14),transparent 60%)}
+.shop-hero h1{font:800 clamp(34px,9.6vw,96px)/.95 var(--font-d);letter-spacing:-.035em;margin:18px 0 18px}
+.shop-hero h1 .accent{color:var(--accent)}
+.shop-hero p{color:var(--muted);max-width:56ch;margin:0;font-size:17px}
+.shop-perks{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.shop-perks span{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;border:1px solid var(--line-2);font-size:13.5px;color:var(--silver)}
+.shop-perks span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+
+.toolbar{position:sticky;top:72px;z-index:30;background:rgba(10,10,11,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-block:1px solid var(--line);padding:14px 0}
+.tb-row{display:flex;gap:12px;align-items:center}
+.search{flex:1;position:relative}
+.search svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--dim)}
+.search input{width:100%;padding:13px 16px 13px 46px;border-radius:999px;border:1px solid var(--line-2);background:var(--panel);outline:none;font-size:15px;transition:border-color .2s,box-shadow .2s}
+.search input:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(46,232,122,.15)}
+.sort{padding:13px 40px 13px 16px;border-radius:999px;border:1px solid var(--line-2);background:var(--panel) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%239a9aa2' stroke-width='1.6'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E") no-repeat right 16px center;appearance:none;font-size:14px;cursor:pointer;outline:none}
+.sort:focus{border-color:var(--accent)}
+.cats{display:flex;gap:8px;overflow-x:auto;padding:12px 0 2px;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 92%,transparent);mask-image:linear-gradient(90deg,#000 92%,transparent)}
+.cats::-webkit-scrollbar{display:none}
+.cats button{flex:none;padding:9px 16px;border-radius:999px;border:1px solid var(--line-2);background:transparent;color:var(--muted);font-size:13.5px;font-weight:500;cursor:pointer;transition:all .2s;white-space:nowrap}
+.cats button b{font-weight:600;color:var(--dim);margin-left:6px;font-size:12px}
+.cats button:hover{color:var(--text);border-color:var(--silver)}
+.cats button.on{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.cats button.on b{color:var(--accent-ink);opacity:.7}
+.vehicles{display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding-top:10px;font-size:13px;color:var(--dim)}
+.vehicles button{padding:5px 11px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--silver);font-size:12.5px;cursor:pointer;transition:all .2s}
+.vehicles button:hover,.vehicles button.on{border-color:var(--accent);color:var(--accent)}
+
+.results{padding:28px 0 100px}
+.res-meta{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px;color:var(--dim);font-size:14px}
+.res-meta button{background:none;border:0;color:var(--accent);cursor:pointer;font-size:14px;padding:0}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{display:flex;flex-direction:column;border-radius:var(--radius);border:1px solid var(--line);background:var(--panel);overflow:hidden;transition:border-color .3s,transform .3s}
+.card:hover{border-color:rgba(46,232,122,.45);transform:translateY(-3px)}
+.thumb{position:relative;aspect-ratio:1;background:#f3f3f1;cursor:zoom-in;overflow:hidden;border:0;padding:0;display:block;width:100%}
+.thumb img{width:100%;height:100%;object-fit:contain;padding:8%;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.card:hover .thumb img{transform:scale(1.06)}
+.thumb .ph{position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,#1f2a23,#111214);color:var(--accent);font:800 44px/1 var(--font-d);letter-spacing:-.04em}
+.thumb .ph small{display:block;font:600 11px/1 var(--font-b);letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-top:10px;text-align:center}
+.thumb.has-img .ph{display:none}
+.badge-off{position:absolute;top:12px;left:12px;padding:5px 9px;border-radius:999px;background:var(--accent);color:var(--accent-ink);font:700 12px/1 var(--font-b)}
+.card-body{padding:16px 16px 18px;display:flex;flex-direction:column;flex:1}
+.card-cat{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);font-weight:600;display:flex;gap:8px}
+.card-cat em{font-style:normal;color:var(--accent)}
+.card h3{font:600 15px/1.35 var(--font-b);margin:8px 0 14px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.7em}
+.price{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-top:auto}
+.price strong{font:700 19px/1 var(--font-d)}
+.price s{color:var(--dim);font-size:13.5px}
+.card-actions{display:flex;gap:8px;margin-top:14px}
+.add{flex:1;display:inline-flex;justify-content:center;align-items:center;gap:8px;padding:11px 12px;border-radius:12px;border:1px solid var(--line-2);background:transparent;font-weight:600;font-size:14px;cursor:pointer;transition:all .2s}
+.add:hover{border-color:var(--accent);color:var(--accent)}
+.add.added{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.ask{width:44px;flex:none;display:grid;place-items:center;border-radius:12px;border:1px solid var(--line-2);color:#25d366;transition:all .2s}
+.ask:hover{border-color:#25d366;background:rgba(37,211,102,.1)}
+.ask svg,.add svg{width:18px;height:18px}
+.empty{text-align:center;padding:80px 20px;color:var(--muted);border:1px dashed var(--line-2);border-radius:var(--radius)}
+.empty strong{display:block;font:700 22px/1.2 var(--font-d);color:var(--text);margin-bottom:8px}
+.more{display:flex;justify-content:center;margin-top:36px}
+
+/* enquiry button in nav */
+.enq-btn{position:relative;display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;border:1px solid var(--line-2);background:transparent;cursor:pointer;font-size:14px;font-weight:600;color:var(--text);transition:border-color .2s}
+.enq-btn:hover{border-color:var(--accent)}
+.enq-btn svg{width:18px;height:18px}
+.enq-btn b{min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-size:11.5px;display:grid;place-items:center}
+.enq-btn b.bump{animation:bump .4s}
+@keyframes bump{50%{transform:scale(1.35)}}
+.nav-right{display:flex;align-items:center;gap:10px}
+.logo span{white-space:nowrap}
+
+/* drawer */
+.scrim{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .3s}
+.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;z-index:95;width:min(440px,100%);background:var(--bg-2);border-left:1px solid var(--line);display:flex;flex-direction:column;transform:translateX(100%);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.drawer.on{transform:none}
+.dr-head{display:flex;justify-content:space-between;align-items:center;padding:22px 24px;border-bottom:1px solid var(--line)}
+.dr-head h2{font:700 22px/1 var(--font-d);margin:0}
+.x{width:40px;height:40px;border-radius:50%;border:1px solid var(--line-2);background:transparent;cursor:pointer;font-size:16px;color:var(--text)}
+.dr-list{flex:1;overflow-y:auto;padding:8px 24px}
+.dr-item{display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.dr-img{width:64px;height:64px;border-radius:10px;background:#f3f3f1;overflow:hidden;display:grid;place-items:center;color:var(--accent);font:800 18px var(--font-d)}
+.dr-img img{width:100%;height:100%;object-fit:contain;padding:6px}
+.dr-img.noimg{background:#16251c}
+.dr-name{font-size:14px;line-height:1.35;font-weight:500}
+.dr-price{font-size:13px;color:var(--muted);margin-top:4px}
+.qty{display:flex;align-items:center;border:1px solid var(--line-2);border-radius:10px;overflow:hidden}
+.qty button{width:30px;height:32px;background:transparent;border:0;cursor:pointer;color:var(--text);font-size:16px}
+.qty button:hover{background:rgba(255,255,255,.06)}
+.qty span{min-width:22px;text-align:center;font-size:14px;font-weight:600}
+.dr-empty{text-align:center;color:var(--muted);padding:60px 10px}
+.dr-foot{padding:20px 24px 24px;border-top:1px solid var(--line);background:var(--bg)}
+.dr-total{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dr-total strong{font:800 26px/1 var(--font-d)}
+.dr-note{font-size:12.5px;color:var(--dim);margin:0 0 16px}
+.dr-foot .btn{width:100%;justify-content:center}
+.dr-foot .wa{background:#25d366;color:#04140a}
+.dr-foot .wa:hover{background:#3be37a;box-shadow:0 10px 40px -10px rgba(37,211,102,.7)}
+.dr-clear{display:block;margin:12px auto 0;background:none;border:0;color:var(--dim);font-size:13px;cursor:pointer}
+.dr-clear:hover{color:var(--text)}
+
+/* quick view */
+.qv{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:var(--gutter);background:rgba(5,5,6,.85);backdrop-filter:blur(8px)}
+.qv.on{display:flex}
+.qv-box{width:min(900px,100%);max-height:calc(100svh - 32px);overflow:auto;display:grid;grid-template-columns:1fr 1fr;border-radius:24px;border:1px solid var(--line-2);background:var(--panel);position:relative}
+.qv-img{background:#f3f3f1;aspect-ratio:1;display:grid;place-items:center;position:relative}
+.qv-img img{width:100%;height:100%;object-fit:contain;padding:8%}
+.qv-img .ph{position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,#1f2a23,#111214);color:var(--accent);font:800 64px/1 var(--font-d)}
+.qv-body{padding:36px 32px;display:flex;flex-direction:column}
+.qv-body h3{font:700 24px/1.25 var(--font-d);margin:10px 0 16px}
+.qv-body .price strong{font-size:28px}
+.qv-body p{color:var(--muted);font-size:14.5px;margin:18px 0 24px}
+.qv-actions{display:flex;flex-direction:column;gap:10px;margin-top:auto}
+.qv-actions .btn{justify-content:center}
+.qv .x{position:absolute;top:14px;right:14px;z-index:2;background:rgba(20,20,22,.85)}
+
+@media (max-width:1100px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:860px){
+  .grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .qv-box{grid-template-columns:1fr}
+  .qv-img{aspect-ratio:4/3}
+  .enq-btn span{display:none}
+}
+@media (max-width:600px){
+  .shop-hero{padding:120px 0 28px}
+  .tb-row{flex-wrap:wrap}
+  .search{flex:1 1 100%}
+  .sort{flex:1}
+  .vehicles{display:none}
+  .card-body{padding:12px 12px 14px}
+  .card h3{font-size:13.5px}
+  .price strong{font-size:16px}
+  .add{padding:10px 8px;font-size:13px}
+  .add .lbl-long{display:none}
+  .ask{width:40px}
+  .toolbar{position:static}
+  .logo span em{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="nav scrolled" id="nav">
+  <div class="wrap">
+    <a href="index.html" class="logo" aria-label="Ninty9 Garages home"><b>99</b><span>NINTY9 <em>GARAGES</em></span></a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="index.html#about">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#work">Our Work</a>
+      <a href="shop.html" class="active" aria-current="page">Shop</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <button class="enq-btn" id="enqBtn" aria-label="Open enquiry list">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6L5 3H2"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/></svg>
+        <span>Enquiry</span><b id="enqCount">0</b>
+      </button>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="shop-hero">
+    <div class="wrap">
+      <span class="eyebrow">Ninty9 Store</span>
+      <h1>Parts &amp; <span class="accent">accessories.</span></h1>
+      <p>Genuine lighting, 4×4 armour, mats, seat covers and car care, from the brands we're authorised to sell. Add what you like to your enquiry and we'll confirm stock, fitment and the final price on WhatsApp.</p>
+      <div class="shop-perks"><span>Genuine, warrantied parts</span><span>Fitment at our Gwalior studio</span><span>Prices in ₹ (INR)</span></div>
+    </div>
+  </section>
+
+  <div class="toolbar">
+    <div class="wrap">
+      <div class="tb-row">
+        <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <input id="q" type="search" placeholder="Search products, brands or vehicles…" aria-label="Search products" autocomplete="off"></label>
+        <select class="sort" id="sort" aria-label="Sort products">
+          <option value="featured">Featured</option>
+          <option value="low">Price: low to high</option>
+          <option value="high">Price: high to low</option>
+          <option value="off">Biggest discount</option>
+        </select>
+      </div>
+      <div class="cats" id="cats" role="toolbar" aria-label="Categories"></div>
+      <div class="vehicles" id="vehicles"><span>Shop by vehicle:</span></div>
+    </div>
+  </div>
+
+  <section class="results">
+    <div class="wrap">
+      <div class="res-meta"><span id="count" aria-live="polite"></span><button id="reset" hidden>Clear filters</button></div>
+      <div class="grid" id="grid"></div>
+      <div class="more"><button class="btn btn-ghost" id="moreBtn" hidden>Show more</button></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="index.html" class="logo"><b>99</b><span>NINTY9 <em>GARAGES</em></span></a>
+        <p style="margin-top:18px">Custom 4×4 mods, flawless detailing, premium accessories &amp; PPF. Gwalior, India.</p>
+      </div>
+      <div><h5>Explore</h5><ul><li><a href="index.html#about">About</a></li><li><a href="index.html#services">Services</a></li><li><a href="index.html#work">Our Work</a></li><li><a href="shop.html">Shop</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li><a href="tel:+917581987816">+91 75819 87816</a></li><li><a href="https://wa.me/917581987816" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="https://www.youtube.com/@Ninty9Garages" target="_blank" rel="noopener">YouTube</a></li></ul></div>
+    </div>
+    <div class="foot-bottom"><span>© <span id="yr"></span> Ninty9 Garages. Prices are indicative and may change; final price confirmed on enquiry.</span><span>Gwalior · Madhya Pradesh</span></div>
+  </div>
+</footer>
+
+<!-- Enquiry drawer -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Enquiry list" aria-hidden="true">
+  <div class="dr-head"><h2>Your enquiry</h2><button class="x" id="drClose" aria-label="Close">✕</button></div>
+  <div class="dr-list" id="drList"></div>
+  <div class="dr-foot">
+    <div class="dr-total"><span>Estimated total</span><strong id="drTotal">₹0</strong></div>
+    <p class="dr-note">Fitment charges, if any, are quoted separately. We'll confirm availability before you pay.</p>
+    <button class="btn wa" id="drSend"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3z"/></svg>Send enquiry on WhatsApp</button>
+    <button class="dr-clear" id="drClear">Clear list</button>
+  </div>
+</aside>
+
+<!-- Quick view -->
+<div class="qv" id="qv" role="dialog" aria-modal="true" aria-label="Product details">
+  <div class="qv-box" id="qvBox"></div>
+</div>
+
+<a class="fab" href="https://wa.me/917581987816" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3z"/></svg></a>
+
+<script src="assets/js/products.js"></script>
+<script>
+const WHATSAPP = "917581987816";
+const IMG_DIR = "assets/products/";
+const PAGE = 24;
+const CAT_ORDER = ["Lighting","Bumpers & Grills","Side Steps & Sills","4×4 Mods & Fitments","Floor & Trunk Mats","Interior","Exterior Accessories","Car Care"];
+const VEHICLES = ["Thar","Thar Roxx","Scorpio","Hilux","Fortuner","Harrier","Nexon","Creta","Seltos","Swift","Punch"];
+
+document.getElementById("yr").textContent = new Date().getFullYear();
+const $ = id => document.getElementById(id);
+const inr = n => "₹" + n.toLocaleString("en-IN");
+const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const off = p => p.was ? Math.round((1 - p.price / p.was) * 100) : 0;
+const priceHTML = p => `<strong>${inr(p.price)}${p.max ? " – " + inr(p.max) : ""}</strong>${p.was ? `<s>${inr(p.was)}</s>` : ""}`;
+const byId = Object.fromEntries(PRODUCTS.map(p => [p.id, p]));
+const initials = p => (p.brand || p.cat).replace(/[^A-Za-z0-9 ]/g,"").split(" ").map(w => w[0]).join("").slice(0,3).toUpperCase();
+const waIcon = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3z"/></svg>';
+const askLink = p => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(`Hi Ninty9 Garages! Is this available?\n\n${p.full}\nListed at ${inr(p.price)}${p.max ? " – " + inr(p.max) : ""}`)}`;
+
+/* ---------- NAV (mobile menu) ---------- */
+const nav = $("nav"), burger = $("burger");
+burger.addEventListener("click", () => burger.setAttribute("aria-expanded", nav.classList.toggle("open")));
+
+/* ---------- STATE ---------- */
+const state = { q:"", cat:"All", sort:"featured", shown:PAGE };
+let enquiry = {};
+try { enquiry = JSON.parse(localStorage.getItem("n9-enquiry") || "{}") || {}; } catch {}
+const saveEnquiry = () => { try { localStorage.setItem("n9-enquiry", JSON.stringify(enquiry)); } catch {} };
+
+/* ---------- FILTER CHIPS ---------- */
+const counts = PRODUCTS.reduce((m,p) => (m[p.cat] = (m[p.cat]||0) + 1, m), {});
+$("cats").innerHTML = ["All", ...CAT_ORDER.filter(c => counts[c])].map(c =>
+  `<button data-cat="${esc(c)}" class="${c==="All"?"on":""}">${esc(c)}<b>${c==="All"?PRODUCTS.length:counts[c]}</b></button>`).join("");
+$("cats").addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  state.cat = b.dataset.cat; state.shown = PAGE; render();
+});
+$("vehicles").insertAdjacentHTML("beforeend", VEHICLES.map(v => `<button data-v="${v}">${v}</button>`).join(""));
+$("vehicles").addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  const v = b.dataset.v; state.q = state.q.toLowerCase() === v.toLowerCase() ? "" : v;
+  $("q").value = state.q; state.shown = PAGE; render();
+});
+let qt; $("q").addEventListener("input", e => { clearTimeout(qt); qt = setTimeout(() => { state.q = e.target.value.trim(); state.shown = PAGE; render(); }, 120); });
+$("sort").addEventListener("change", e => { state.sort = e.target.value; render(); });
+$("reset").addEventListener("click", () => { Object.assign(state, {q:"", cat:"All", sort:"featured", shown:PAGE}); $("q").value=""; $("sort").value="featured"; render(); });
+$("moreBtn").addEventListener("click", () => { state.shown += PAGE; render(); });
+
+/* ---------- RENDER GRID ---------- */
+function filtered(){
+  const terms = state.q.toLowerCase().split(/\s+/).filter(Boolean);
+  let list = PRODUCTS.filter(p => (state.cat === "All" || p.cat === state.cat) &&
+    terms.every(t => (p.full + " " + p.brand + " " + p.cat).toLowerCase().includes(t)));
+  const s = state.sort;
+  if (s === "low") list = [...list].sort((a,b) => a.price - b.price);
+  if (s === "high") list = [...list].sort((a,b) => b.price - a.price);
+  if (s === "off") list = [...list].sort((a,b) => off(b) - off(a));
+  return list;
+}
+function card(p){
+  const d = off(p), inEnq = enquiry[p.id];
+  return `<article class="card">
+    <button class="thumb${p.img ? "" : ""}" data-qv="${p.id}" aria-label="View ${esc(p.name)}">
+      <div class="ph"><div>${esc(initials(p))}<small>${esc(p.brand || p.cat)}</small></div></div>
+      ${p.img ? `<img src="${IMG_DIR}${p.img}" alt="${esc(p.name)}" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()">` : ""}
+      ${d >= 3 ? `<span class="badge-off">-${d}%</span>` : ""}
+    </button>
+    <div class="card-body">
+      <div class="card-cat">${p.brand ? `<em>${esc(p.brand)}</em>` : ""}<span>${esc(p.cat)}</span></div>
+      <h3 title="${esc(p.full)}">${esc(p.name)}</h3>
+      <div class="price">${priceHTML(p)}</div>
+      <div class="card-actions">
+        <button class="add${inEnq ? " added" : ""}" data-add="${p.id}">${inEnq ? "✓ Added" : `+ Add<span class="lbl-long">&nbsp;to enquiry</span>`}</button>
+        <a class="ask" href="${askLink(p)}" target="_blank" rel="noopener" aria-label="Ask about ${esc(p.name)} on WhatsApp">${waIcon}</a>
+      </div>
+    </div>
+  </article>`;
+}
+function render(){
+  const list = filtered();
+  document.querySelectorAll("#cats button").forEach(b => b.classList.toggle("on", b.dataset.cat === state.cat));
+  document.querySelectorAll("#vehicles button").forEach(b => b.classList.toggle("on", b.dataset.v.toLowerCase() === state.q.toLowerCase()));
+  $("count").textContent = `${list.length} product${list.length === 1 ? "" : "s"}${state.cat !== "All" ? " in " + state.cat : ""}${state.q ? ` matching “${state.q}”` : ""}`;
+  $("reset").hidden = !(state.q || state.cat !== "All" || state.sort !== "featured");
+  $("grid").innerHTML = list.length ? list.slice(0, state.shown).map(card).join("") :
+    `<div class="empty" style="grid-column:1/-1"><strong>Nothing found</strong>Try another search, or <a href="https://wa.me/${WHATSAPP}" target="_blank" rel="noopener" style="color:var(--accent)">ask us on WhatsApp</a>. We can usually source it.</div>`;
+  $("moreBtn").hidden = list.length <= state.shown;
+  $("moreBtn").textContent = `Show more (${list.length - state.shown} left)`;
+}
+
+/* ---------- ENQUIRY ---------- */
+function addToEnquiry(id){
+  enquiry[id] = (enquiry[id] || 0) + 1; saveEnquiry(); updateEnquiry(true);
+  document.querySelectorAll(`[data-add="${id}"]`).forEach(b => { b.classList.add("added"); b.textContent = "✓ Added"; });
+}
+function updateEnquiry(bump){
+  const ids = Object.keys(enquiry).filter(id => byId[id]);
+  const n = ids.reduce((s,id) => s + enquiry[id], 0);
+  const c = $("enqCount"); c.textContent = n;
+  if (bump) { c.classList.remove("bump"); void c.offsetWidth; c.classList.add("bump"); }
+  const total = ids.reduce((s,id) => s + byId[id].price * enquiry[id], 0);
+  $("drTotal").textContent = inr(total);
+  $("drSend").disabled = !n; $("drSend").style.opacity = n ? 1 : .5;
+  $("drList").innerHTML = n ? ids.map(id => { const p = byId[id]; return `
+    <div class="dr-item">
+      <div class="dr-img${p.img ? "" : " noimg"}">${p.img ? `<img src="${IMG_DIR}${p.img}" alt="" onerror="this.parentNode.classList.add('noimg');this.parentNode.textContent='${esc(initials(p))}'">` : esc(initials(p))}</div>
+      <div><div class="dr-name">${esc(p.name)}</div><div class="dr-price">${inr(p.price)}${p.max ? "+" : ""} each</div></div>
+      <div class="qty"><button data-dec="${id}" aria-label="Decrease">−</button><span>${enquiry[id]}</span><button data-inc="${id}" aria-label="Increase">+</button></div>
+    </div>`; }).join("") : `<div class="dr-empty">Your enquiry list is empty.<br>Add products and send them to us in one message.</div>`;
+}
+function openDrawer(){ $("drawer").classList.add("on"); $("scrim").classList.add("on"); $("drawer").setAttribute("aria-hidden","false"); document.body.style.overflow="hidden"; }
+function closeDrawer(){ $("drawer").classList.remove("on"); $("scrim").classList.remove("on"); $("drawer").setAttribute("aria-hidden","true"); document.body.style.overflow=""; }
+$("enqBtn").onclick = openDrawer; $("drClose").onclick = closeDrawer; $("scrim").onclick = closeDrawer;
+$("drList").addEventListener("click", e => {
+  const inc = e.target.dataset.inc, dec = e.target.dataset.dec;
+  if (inc) enquiry[inc]++;
+  if (dec) { if (--enquiry[dec] <= 0) { delete enquiry[dec]; render(); } }
+  if (inc || dec) { saveEnquiry(); updateEnquiry(); }
+});
+$("drClear").onclick = () => { enquiry = {}; saveEnquiry(); updateEnquiry(); render(); };
+$("drSend").onclick = () => {
+  const ids = Object.keys(enquiry).filter(id => byId[id]); if (!ids.length) return;
+  const lines = ids.map((id,i) => { const p = byId[id]; return `${i+1}. ${p.name} × ${enquiry[id]} (${inr(p.price * enquiry[id])}${p.max ? "+" : ""})`; });
+  const total = ids.reduce((s,id) => s + byId[id].price * enquiry[id], 0);
+  const msg = `Hi Ninty9 Garages! I'd like to enquire about:\n\n${lines.join("\n")}\n\nEstimated total: ${inr(total)}\n\nPlease confirm availability and fitment.`;
+  window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
+};
+
+/* ---------- QUICK VIEW ---------- */
+function openQV(id){
+  const p = byId[id], d = off(p);
+  $("qvBox").innerHTML = `
+    <button class="x" id="qvClose" aria-label="Close">✕</button>
+    <div class="qv-img"><div class="ph">${esc(initials(p))}</div>${p.img ? `<img src="${IMG_DIR}${p.img}" alt="${esc(p.name)}" onerror="this.remove()">` : ""}</div>
+    <div class="qv-body">
+      <div class="card-cat">${p.brand ? `<em>${esc(p.brand)}</em>` : ""}<span>${esc(p.cat)}</span></div>
+      <h3>${esc(p.full)}</h3>
+      <div class="price">${priceHTML(p)}${d >= 3 ? `<span class="badge-off" style="position:static">-${d}%</span>` : ""}</div>
+      <p>Genuine product, available for fitment at our Gwalior studio. Send us an enquiry and we'll confirm stock, fitment time and final price.</p>
+      <div class="qv-actions">
+        <button class="btn btn-primary" data-add="${p.id}">${enquiry[p.id] ? "✓ Added" : "+ Add to enquiry"}</button>
+        <a class="btn btn-ghost" href="${askLink(p)}" target="_blank" rel="noopener">Ask on WhatsApp</a>
+      </div>
+    </div>`;
+  $("qv").classList.add("on"); document.body.style.overflow = "hidden";
+  $("qvClose").onclick = closeQV;
+}
+function closeQV(){ $("qv").classList.remove("on"); if (!$("drawer").classList.contains("on")) document.body.style.overflow = ""; }
+$("qv").addEventListener("click", e => { if (e.target.id === "qv") closeQV(); });
+addEventListener("keydown", e => { if (e.key === "Escape") { closeQV(); closeDrawer(); } });
+
+document.addEventListener("click", e => {
+  const add = e.target.closest("[data-add]"); if (add) { addToEnquiry(+add.dataset.add); return; }
+  const qv = e.target.closest("[data-qv]"); if (qv) openQV(+qv.dataset.qv);
+});
+
+render(); updateEnquiry();
+</script>
+</body>
+</html>
