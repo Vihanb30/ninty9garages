@@ -14,6 +14,9 @@ All products live in `assets/js/products.js`, one line per product:
 - Product photos go in `assets/products/`, named as in `img`. If a photo is missing, the card shows a styled placeholder.
 - There's no checkout. Visitors build an enquiry list, which is saved in their browser, and send it to WhatsApp with an estimated total.
 
+## Services
+The service cards and their pop-ups on the home page read from `assets/js/services.js`: overview, what's included, notes and the link to the matching shop category. Edit the text there. Every service and product has its own shareable link, e.g. `index.html#service-lighting` or `shop.html#product-2787`.
+
 ## Quote form
 - **Netlify:** works out of the box (Netlify Forms). Submissions appear under Site → Forms.
 - **Anywhere else:** create a free form at formspree.io and paste its endpoint into `CONFIG.formspree` in the script.
@@ -25,3 +28,7 @@ All products live in `assets/js/products.js`, one line per product:
 - GitHub Pages: push to a repo and enable Pages on the main branch.
 
 Local preview: `python3 -m http.server 8099`
+
+## Notes
+- `404.html` links use `/ninty9garages/` paths for GitHub Pages. If you move to a custom domain, change them to `/`.
+- Studio details (address, hours, phone) appear in `index.html`, `shop.html` and `assets/js/services.js`.
