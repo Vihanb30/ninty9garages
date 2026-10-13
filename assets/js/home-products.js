@@ -15,7 +15,7 @@ window.HOME_PRODUCTS = {
 "2784": {"id": 2784, "name": "Thar Bimbra Model O Off-Road Metal Front Bumper (Fitment & Direct Supply)", "brand": "Bimbra", "cat": "Bumpers & Grills", "price": 26990, "img": "thar-front-bumper-model-o-gwaliorjpg.jpg"},
 "2787": {"id": 2787, "name": "Mahindra Thar Bimbra Model X Off-Road Heavy Duty Metal Bumper", "brand": "Bimbra", "cat": "Bumpers & Grills", "price": 34990, "img": "thar-bimbra-metal-bumper-model-x.jpg"},
 "2878": {"id": 2878, "name": "GFX Dynamic Car Side Vents (Universal Fit)", "brand": "GFX", "cat": "Exterior Accessories", "price": 1520, "was": 1800, "img": "gfx-dynamic-side-vent-gwalior.jpg"},
-"3077": {"id": 3077, "name": "Bimbra Thar S1 Grill Matt Black Front Grill", "brand": "Bimbra", "cat": "Bumpers & Grills", "price": 8490, "img": "thar-seven-slot-grill-matt-black-gwalior.jpg"},
+"3077": {"id": 3077, "name": "Bimbra Thar S1 Grill Matte Black Front Grill", "brand": "Bimbra", "cat": "Bumpers & Grills", "price": 8490, "img": "thar-seven-slot-grill-matt-black-gwalior.jpg"},
 "3095": {"id": 3095, "name": "Toyota Hilux Side Steps & Hilux Travo – Bimbra 4×4 Model TX (Dual LED Lights)", "brand": "Bimbra", "cat": "Side Steps & Sills", "price": 24990, "img": "hilux-side-steps-with-led.jpg"},
 "3101": {"id": 3101, "name": "Mahindra Thar Seat Cover Tan Black Xpress Perfo Ventilated (Crysta Type + Tan Stitching)", "brand": "", "cat": "Seat Covers & Interior", "price": 16999, "img": "mahindra-thar-seat-cover-tan-black-tan-stitch-crysta-type.jpg"},
 "3103": {"id": 3103, "name": "Cardi 1:1 Illuminated AC Vents for Thar / Thar Roxx", "brand": "Cardi", "cat": "Lighting", "price": 9500, "img": "cardi-1o1-ac-vent-for-thar-roxx.jpg"},

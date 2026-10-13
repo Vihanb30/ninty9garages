@@ -2,7 +2,7 @@
    Each entry powers one service card's detail pop-up on the home page. */
 window.SERVICES = [
   {
-    slug: "4x4-modification", num: "01", title: "4×4 Modification",
+    slug: "4x4-modification", num: "08", title: "4×4 Modification",
     tagline: "Exterior styling, functional upgrades and off-road builds for your SUV.",
     img: "assets/gallery/thar-bumper.jpg", pos: "center 58%",
     imgs: ["assets/gallery/thar-bumper.jpg", "assets/gallery/thar-snorkel.jpg"],
@@ -58,7 +58,7 @@ window.SERVICES = [
     form: "Graphene/Ceramic Coating"
   },
   {
-    slug: "detailing", num: "04", title: "Detailing & Paint Correction",
+    slug: "detailing", num: "01", title: "Detailing & Paint Correction",
     tagline: "A complete refresh, inside and out, at our Turtle Wax Car Care Studio.",
     img: "assets/gallery/paint-correction.jpg",
     imgs: ["assets/gallery/paint-correction.jpg", "assets/services/dry-cleaning.jpg", "assets/gallery/interior-detailing.jpg"],
@@ -75,7 +75,7 @@ window.SERVICES = [
     form: "Detailing"
   },
   {
-    slug: "lighting", num: "05", title: "Lighting Upgrades",
+    slug: "lighting", num: "06", title: "Lighting Upgrades",
     tagline: "Authorised Aozoom retailer and installation studio.",
     img: "", beam: true,
     intro: [
@@ -92,7 +92,7 @@ window.SERVICES = [
     form: "Lighting"
   },
   {
-    slug: "interiors-accessories", num: "06", title: "Interiors & Accessories",
+    slug: "interiors-accessories", num: "07", title: "Interiors & Accessories",
     tagline: "Professional installation of car accessories, inside and out.",
     img: "assets/gallery/interior-detailing.jpg", pos: "center 40%",
     intro: [
@@ -109,7 +109,7 @@ window.SERVICES = [
     form: "Accessories"
   },
   {
-    slug: "sun-control-film", num: "07", title: "Sun Control Window Film",
+    slug: "sun-control-film", num: "04", title: "Sun Control Window Film",
     tagline: "A cooler, more comfortable cabin with less heat and glare.",
     img: "assets/services/sun-film.jpg",
     intro: [
@@ -124,7 +124,7 @@ window.SERVICES = [
     form: "Sun Control Film"
   },
   {
-    slug: "underbody-coating", num: "08", title: "Underbody Coating",
+    slug: "underbody-coating", num: "05", title: "Underbody Coating",
     tagline: "Protection for the part of your car you never see.",
     img: "assets/services/underbody.jpg", pos: "center 40%",
     intro: [

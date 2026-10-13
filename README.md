@@ -1,6 +1,9 @@
 # Ninty9 Garages: static site
 
-Two pages, `index.html` (home) and `shop.html` (store), sharing `assets/css/site.css`. Plain HTML, CSS and vanilla JS, with Three.js r128 loaded from cdnjs for the hero terrain. No build step.
+Two pages, `index.html` (home) and `shop.html` (store), sharing `assets/css/site.css`. Plain HTML, CSS and vanilla JS. No build step and no external scripts.
+
+## Theme
+Colours live as variables at the top of `assets/css/site.css` (`:root` for light sections, `.dark` for the black hero, partners band and footer). Change `--accent` to recolour buttons and highlights. Fonts are Manrope (headings) and Inter (text).
 
 ## Add real photos
 Gallery photos live in `assets/gallery/`. To swap or add one, drop a JPG (about 1600px wide, under 300 KB) there and point a tile’s `<img src>` at it.
